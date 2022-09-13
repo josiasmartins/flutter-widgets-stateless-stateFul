@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool opacidade = true;
 
   /*
   *  Row: é a Linha, onde os objetos estão dispostos
@@ -17,8 +24,6 @@ class MyApp extends StatelessWidget {
   * indica o eixo principal, que dessa vez
   * é o vertical. Logo o CrossAxis é o eixo horizontal.
   * */
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,28 +36,35 @@ class MyApp extends StatelessWidget {
             leading: Container(),
             title: Text('tasks'),
           ),
-          body: ListView(
-            children: [
-              Task(
-                  'Learn to unit test',
-                  'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
-                  3),
-              Task(
-                  'Learn java',
-                  'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
-                  4),
-              Task(
-                  'Learn angular',
-                  'https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg',
-                  3),
-              Task('Learn to flutter', '', 2),
-              Task('Learn java', 'https://unsplash.com/photos/7cJMYR7bhNY', 5),
-            ],
+          body: AnimatedOpacity(
+            opacity: opacidade ? 1 : 0,
+            duration: Duration(milliseconds: 1000),
+            child: ListView(
+              children: [
+                Task(
+                    'Learn to unit test',
+                    'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+                    3),
+                Task(
+                    'Learn java',
+                    'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
+                    4),
+                Task(
+                    'Learn angular',
+                    'https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg',
+                    3),
+                Task('Learn to flutter', '', 2),
+                Task('Learn java', 'https://unsplash.com/photos/7cJMYR7bhNY', 5),
+              ],
+            ),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              print('ibag');
+              setState(() {
+                opacidade = !opacidade;
+              });
             },
+            child: Icon(Icons.remove_red_eye),
           )),
     );
   }
