@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'minha_primeira_tela.dart';
+
 void main() {
   runApp(MyApp());
 }
