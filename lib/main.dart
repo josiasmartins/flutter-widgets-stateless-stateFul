@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
           body: ListView(
             children: [
               Task('Learn to flutter no café da manhâ com d sdsdsdiswddsd', 'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large'),
-              Task('Learn java', ''),
-              Task('Learn angular', ''),
+              Task('Learn java', 'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg'),
+              Task('Learn angular', 'https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg'),
               Task('Learn to flutter', ''),
-              Task('Learn java', ''),
+              Task('Learn java', 'https://unsplash.com/photos/7cJMYR7bhNY'),
             ],
           ),
           floatingActionButton: FloatingActionButton(
@@ -128,15 +128,30 @@ class _TaskState extends State<Task> {
                             fit: BoxFit.cover,
                         ),
                       ),
-                      Container(
-                          width: 200,
-                          child: Text(
-                            widget.nome,
-                            style: TextStyle(
-                              fontSize: 24,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          )),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                              width: 200,
+                              child: Text(
+                                widget.nome,
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              )),
+                          Row(
+                            children: [
+                              Icon(Icons.star, size: 15, color: Colors.blue,),
+                              Icon(Icons.star, size: 15, color: Colors.blue,),
+                              Icon(Icons.star, size: 15, color: Colors.blue,),
+                              Icon(Icons.star, size: 15, color: Colors.blue[100],),
+                              Icon(Icons.star, size: 15, color: Colors.blue[100],),
+                            ],
+                          ),
+                        ],
+                      ),
                       Container(
                         height: 52,
                         width: 52,
