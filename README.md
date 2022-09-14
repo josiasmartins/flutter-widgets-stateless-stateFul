@@ -2,6 +2,9 @@
 
 Nosso primeiro projeto em flutter
 
+## demo
+![demo](./assets/images/gif/flutter_meu_primeiro_app.gif)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
