@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nosso_primeiro_projeto/components/task.dart';
 
 class InitialScreen extends StatefulWidget {
-
   const InitialScreen({Key? key}) : super(key: key);
 
   @override
@@ -26,18 +25,27 @@ class _InitialScreenState extends State<InitialScreen> {
             children: const [
               Task(
                   'Learn to unit test',
-                  'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+                  'assets/images/dash.png',
                   3),
               Task(
                   'Learn java',
-                  'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
+                  'assets/images/bike.webp',
                   4),
               Task(
                   'Learn angular',
-                  'https://tswbike.com/wp-content/uploads/2020/09/108034687_626160478000800_2490880540739582681_n-e1600200953343.jpg',
+                  'assets/images/dash.png',
                   3),
-              Task('Learn to flutter', '', 2),
-              Task('Learn java', 'https://unsplash.com/photos/7cJMYR7bhNY', 5),
+              Task(
+                  'Learn to flutter',
+                  'assets/images/livro.jpg',
+                  2),
+              Task(
+                  'Learn node',
+                  'assets/images/meditar.jpeg',
+                  5),
+              SizedBox(
+                height: 80,
+              )
             ],
           ),
         ),
